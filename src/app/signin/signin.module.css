@@ -1,0 +1,75 @@
+.Signin {
+  /* border: 1px solid black; */
+  background-image: url("./../../../public/signinPage/signinBg.png");
+  background-size: cover;
+  background-position: center;
+  height: 93.5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  margin-top: 4vw;
+  .google {
+    cursor: pointer;
+  }
+  .google,
+  .phone {
+    width: 50vw;
+    border: 0.2vw solid #ff93df;
+    padding: 1.4vw 1.5vw;
+    display: flex;
+    gap: 2vw;
+    border-radius: 5vw;
+    background-color: #dfebf4;
+    .googleIconContainer {
+      /* border: 1px solid black; */
+      width: 3vw;
+      /* height: 3vw; */
+      display: flex;
+      place-items: center;
+    }
+    .title {
+      /* border: 1px solid black; */
+      font-size: 1.2vw;
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .or {
+    font-size: 1.5vw;
+    font-weight: 500;
+  }
+  .phone {
+    .input {
+      border: none;
+      outline: none;
+      padding: 0.5vw 0.5vw;
+      width: 100%;
+      font-size: 1.2vw;
+      font-weight: 600;
+      color: #555;
+      background-color: transparent;
+    }
+  }
+  .terms {
+    font-size: 1.2vw;
+    font-weight: 400;
+    text-align: center;
+    .strong {
+      font-weight: 500;
+    }
+  }
+  .btn {
+    font-size: 1.5vw;
+    padding: 0.5vw 3vw;
+    border-radius: 2vw;
+  }
+}
+
+.input::placeholder {
+  color: #555;
+  font-weight: 600;
+}

@@ -1,0 +1,49 @@
+.InstantFaceSwap {
+  width: 100%;
+  /* border: 1px solid black; */
+  padding: 4vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url("./../../../../public/home/instantFaseSwap/instantFaceSwapBg.png");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  .leftContainer {
+    /* border: 1px solid black; */
+    width: 50%;
+    margin-left: 2%;
+    .title {
+      font-size: 3.5vw;
+      color: #fff;
+    }
+  }
+  .rightContainer {
+    /* border: 1px solid black; */
+    width: 50%;
+    .imgContainer01 {
+      width: 20vw;
+      display: flex;
+      place-items: center;
+      position: absolute;
+      bottom: 0;
+      right: 35%;
+    }
+    .imgContainer02 {
+      width: 20vw;
+      display: flex;
+      place-items: center;
+      position: absolute;
+      bottom: 0;
+      right: 20%;
+    }
+    .imgContainer03 {
+      width: 25vw;
+      display: flex;
+      place-items: center;
+      position: absolute;
+      bottom: 0;
+      right: 5%;
+    }
+  }
+}

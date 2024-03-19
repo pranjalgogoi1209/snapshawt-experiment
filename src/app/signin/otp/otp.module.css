@@ -1,0 +1,76 @@
+.Otp {
+  border: 1px solid black;
+  background-image: url("./../../../../public/signinPage/signinBg.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  height: 93.5vh;
+  margin-top: 4vw;
+  .title {
+    /* border: 1px solid black; */
+    font-size: 1.2vw;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .otpContainer {
+    display: flex;
+    gap: 1vw;
+    .inputContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 0.2vw solid #7a21bb;
+      width: 5vw;
+      height: 5vw;
+      border-radius: 1vw;
+    }
+    .input {
+      border: none;
+      outline: none;
+      width: 25%;
+      /* height: 20%; */
+      font-size: 1.5vw;
+      background-color: transparent;
+    }
+    .input::-webkit-inner-spin-button,
+    .input::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .input {
+      /* Firefox */
+      -moz-appearance: textfield;
+    }
+  }
+  .wrong {
+    color: red;
+    font-weight: 500;
+  }
+  .resendContainer {
+    font-size: 1.2vw;
+    font-weight: 500;
+    .resend {
+      color: #7a21bb;
+      text-decoration: underline;
+      text-decoration-color: #7a21bb;
+      cursor: pointer;
+    }
+    .timer {
+      display: none;
+      color: #7a21bb;
+      text-decoration-color: #7a21bb;
+    }
+  }
+  .btn {
+    font-size: 1.5vw;
+    padding: 0.5vw 3vw;
+    border-radius: 2vw;
+  }
+}

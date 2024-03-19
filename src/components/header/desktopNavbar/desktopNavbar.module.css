@@ -1,0 +1,27 @@
+.DesktopNavbar {
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+
+  .navLink {
+    font-size: 1.2vw;
+    font-weight: 600;
+  }
+  .signIn {
+    /* border: 1px solid black; */
+    padding: 0.6vw 1vw;
+    width: 8vw;
+    text-align: center;
+  }
+  .profile {
+    border: 0.3vw solid var(--themeColor2);
+    border-radius: 50%;
+    display: flex;
+    place-items: center;
+    width: 3.5vw;
+    cursor: pointer;
+    box-shadow: 0 0.2vw 0.5vw var(--themeColor1);
+  }
+}

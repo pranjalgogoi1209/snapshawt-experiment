@@ -1,0 +1,25 @@
+.SelectFaceSwap {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  .title {
+    font-weight: 700;
+    text-align: center;
+    font-size: 2vw;
+    line-height: 2.5vw;
+  }
+  .selectFace {
+    .templateFace {
+      border-radius: 50%;
+    }
+    .swapIcon {
+      border: 1px solid black;
+    }
+    .photoFace {
+      border: 1px solid black;
+    }
+  }
+}

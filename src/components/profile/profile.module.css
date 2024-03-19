@@ -1,0 +1,101 @@
+.Profile {
+  /* border: 1px solid black; */
+  width: 25vw;
+  background-image: url("./../../../public/profile/profileBg.png");
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0.2vw 0.2vw 0.5vw var(--themeColor2);
+  border-radius: 2vw;
+  padding: 2vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  .user {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2vw;
+    /* border: 1px solid black; */
+    .userProfile {
+      border: 0.3vw solid var(--themeColor2);
+      border-radius: 50%;
+      display: flex;
+      place-items: center;
+      width: 4.5vw;
+      cursor: pointer;
+      box-shadow: 0 0.4vw 0.6vw var(--themeColor1);
+    }
+    .rightContainer {
+      /* border: 1px solid black; */
+      display: flex;
+      flex-direction: column;
+      gap: 2vw;
+      width: 15vw;
+      .contact {
+        font-weight: 500;
+        font-size: 1.3vw;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5vw;
+        .phoneEmail {
+          word-wrap: break-word;
+        }
+        .bigEmail {
+          font-size: 1vw;
+        }
+      }
+      .btn {
+        font-size: 1.2vw;
+        width: 100%;
+      }
+    }
+  }
+  .gallery {
+    border-top: 0.2vw solid var(--themeColor2);
+    padding-top: 0.5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    .top {
+      display: flex;
+      justify-content: space-between;
+      .txt {
+        font-size: 1.2vw;
+        font-weight: 500;
+      }
+      .download {
+        font-size: 1.2vw;
+        font-weight: 500;
+        display: flex;
+        place-items: center;
+        gap: 0.5vw;
+      }
+    }
+    .bottom {
+      display: flex;
+      /* justify-content: space-between; */
+      gap: 1vw;
+      flex-wrap: wrap;
+      .imgContainer {
+        width: 30%;
+        height: 35%;
+        .img {
+          border-radius: 1vw;
+        }
+      }
+    }
+    .seeAll {
+      font-size: 1.2vw;
+      font-weight: 500;
+      margin-left: auto;
+      cursor: pointer;
+    }
+  }
+  .logout {
+    border-top: 0.2vw solid var(--themeColor2);
+    padding-top: 0.5vw;
+    font-size: 1.2vw;
+    font-weight: 500;
+    cursor: pointer;
+  }
+}
