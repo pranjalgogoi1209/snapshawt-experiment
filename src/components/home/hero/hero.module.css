@@ -1,3 +1,5 @@
+/** @format */
+
 .Hero {
   /* border: 1px solid black; */
   position: relative;
@@ -49,6 +51,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            .maskLayer {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              border-radius: 2vw;
+              z-index: 0;
+              animation: blur 8.2s both infinite;
+            }
             .img {
               border-radius: 2vw;
             }
@@ -164,5 +174,24 @@
   }
   .svg {
     font-size: 1.5vw;
+  }
+}
+
+@keyframes blur {
+  0% {
+    background-color: white;
+    opacity: 0.9;
+  }
+  50% {
+    background-color: white;
+    opacity: 0.9;
+  }
+  51% {
+    background-color: white;
+    opacity: 0;
+  }
+  100% {
+    background-color: rgba(128, 128, 128, 0.787);
+    opacity: 0;
   }
 }

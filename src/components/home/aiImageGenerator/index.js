@@ -10,16 +10,45 @@ import animatedIcon01 from "@/../public/home/aiImageGenerator/imgGenerator01.png
 import animatedIcon02 from "@/../public/home/aiImageGenerator/imgGenerator02.png";
 import animatedIcon03 from "@/../public/home/aiImageGenerator/imgGenerator03.png";
 import { IoSearchOutline } from "react-icons/io5";
+import { TypeAnimation } from "react-type-animation";
+
+
+import aigenerate2 from "@/../public/faceSwap/singleAiFaceSwap/templates/images-02.png";
+import aigenerate3 from "@/../public/faceSwap/singleAiFaceSwap/templates/images-03.png";
+import aigenerate4 from "@/../public/faceSwap/singleAiFaceSwap/templates/images-04.png";
+import aigenerate7 from "@/../public/faceSwap/singleAiFaceSwap/templates/images-07.png";
+import aigenerate8 from "@/../public/faceSwap/singleAiFaceSwap/templates/images-08.png";
+import aigenerate10 from "@/../public/faceSwap/singleAiFaceSwap/templates/images-10.png";
+import { useState, useEffect } from "react";
+
+const list = [
+  aigenerate2, aigenerate3, aigenerate4, aigenerate7, aigenerate8
+];
 
 export default function AiImageGenerator() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const updateImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % list.length);
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(updateImage, 8200);
+    return () => clearInterval(intervalId);
+  }, []);
+
+  const currentImage = list[currentImageIndex];
+
+
   return (
     <div className={styles.AiImageGenerator}>
       <div className={styles.leftContainer}>
         <div className={styles.mainContainer}>
           {/* main image */}
           <div className={styles.imgContainer}>
+
             <Image
-              src={imgGeneratorImg01}
+              src={currentImage}
               alt="ai-face-swap"
               className={styles.img}
             />
@@ -27,7 +56,26 @@ export default function AiImageGenerator() {
 
           {/* search */}
           <div className={styles.search}>
-            <p className={styles.prompt}>A girl in train in Indian attire</p>
+            <p className={styles.prompt}>
+              <TypeAnimation
+                sequence={[
+                  'A girl in train in Indian Atire',
+                  5000,
+                  'every ceo is don in nature yess',
+                  5000,
+                  'A girl in train in Indian Atire',
+                  5000,
+                  'every ceo is don in nature yess',
+                  5000,
+                  'A girl in train in Indian Atire',
+                  5000,
+                ]}
+                wrapper="span"
+                speed={10}
+                omitDeletionAnimation="true"
+                style={{ fontSize: '1em', display: 'inline-block' }}
+                repeat={Infinity}
+              /></p>
             <IoSearchOutline className={styles.svg} />
           </div>
 
