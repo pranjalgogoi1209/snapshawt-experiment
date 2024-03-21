@@ -31,7 +31,6 @@
         overflow: hidden;
         .img {
           border-radius: 1vw;
-          animation: blur 8.2s both infinite;
         }
       }
       .search {
@@ -156,21 +155,6 @@
   }
 }
 
-@keyframes blur {
-  0% {
-    background-color: white;
-    filter: blur(9px);
-  }
-  50% {
-    background-color: white;
-    filter: blur(9px);
-  }
-  51% {
-    background-color: white;
-    filter: blur(0);
-  }
-  100% {
-    background-color: rgba(128, 128, 128, 0.787);
-    filter: blur(0);
-  }
+.blur {
+  filter: blur(9px);
 }

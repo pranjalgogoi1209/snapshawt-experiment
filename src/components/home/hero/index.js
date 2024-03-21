@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./hero.module.css";
 import Link from "next/link";
 import Image from "next/image";
@@ -12,6 +12,23 @@ import faceSwapImg02 from "./../../../../public/home/hero/faceSwapImg02.png";
 import imgInhancerImg01 from "./../../../../public/home/hero/imgInhancerImg01.png";
 import imgGeneratorImg01 from "./../../../../public/home/hero/imgGeneratorImg01.png";
 import free from "./../../../../public/home/hero/free.png";
+
+import aigenerate2 from "@/../public/faceSwap/singleAiFaceSwap/templates/images-02.png";
+import aigenerate3 from "@/../public/faceSwap/singleAiFaceSwap/templates/images-03.png";
+import aigenerate4 from "@/../public/faceSwap/singleAiFaceSwap/templates/images-04.png";
+import aigenerate7 from "@/../public/faceSwap/singleAiFaceSwap/templates/images-07.png";
+import aigenerate8 from "@/../public/faceSwap/singleAiFaceSwap/templates/images-08.png";
+
+const list = [aigenerate2, aigenerate3, aigenerate4, aigenerate7, aigenerate8];
+
+const textList = [
+  'a girl in train in indian saree in customary aliance',
+  'a lady in train in indian saree',
+  'a shed ',
+  'a bark in train in indian saree',
+  'a cats in train in indian saree',
+];
+
 
 export default function Hero() {
   const faceSwap = [
@@ -55,6 +72,50 @@ export default function Hero() {
 
   const [imgInhancerIndex, setImgInhancerIndex] = useState();
   const [imgInhancerImg, setImgInhancerImg] = useState(imgInhancerImg01);
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [typingText, setTypingText] = useState('');
+  const [typingCompleted, setTypingCompleted] = useState(false);
+  const [showBlur, setShowBlur] = useState(true);
+
+  useEffect(() => {
+    const currentIndex = typingText.length;
+    const currentTarget = textList[currentImageIndex];
+    const targetLength = currentTarget.length;
+
+    const timePerCharacter = 3000 / targetLength;
+
+    if (!typingCompleted && currentIndex < targetLength) {
+      const timeout = setTimeout(() => {
+        setTypingText(currentTarget.substring(0, currentIndex + 1));
+      }, timePerCharacter);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [typingText, typingCompleted, currentImageIndex]);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % list.length);
+      setTypingText('');
+      setTypingCompleted(false);
+      setShowBlur(true);
+
+      setTimeout(() => {
+        setShowBlur(false);
+      }, 3200);
+    }, 10000);
+    return () => clearInterval(intervalId);
+  }, []);
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      setShowBlur(false);
+    }, 3200)
+  }, [])
+
+  const currentImage = list[currentImageIndex];
+
   return (
     <div className={styles.Hero}>
       {/* bg */}
@@ -173,13 +234,10 @@ export default function Hero() {
             {/* ai image generator */}
             <div className={styles.faceSwap}>
               <div className={styles.imgContainer}>
-                <div className={styles.maskLayer}>
-
-                </div>
                 <Image
-                  src={imgGeneratorImg01}
-                  alt="face-swap"
-                  className={styles.img}
+                  src={currentImage}
+                  alt="ai-face-swap"
+                  className={`${styles.img} ${showBlur ? styles.blur : ''}`}
                 />
               </div>
               <div className={styles.faceSwapContent}>
@@ -198,20 +256,11 @@ export default function Hero() {
                 <div className={styles.bottom}>
                   <div className={styles.search}>
                     <p className={styles.prompt}>
-                      <TypeAnimation
-                        sequence={[
-                          'A girl in train in Indian Atire',
-                          5000,
-                          'every ceo is don in nature yess',
-                          5000,
-
-                        ]}
-                        wrapper="span"
-                        speed={10}
-                        omitDeletionAnimation="true"
-                        style={{ fontSize: '1em', display: 'inline-block' }}
-                        repeat={Infinity}
-                      />
+                      {typingCompleted ? (
+                        textList[currentImageIndex]
+                      ) : (
+                        <>{typingText}</>
+                      )}
                     </p>
                     <IoSearchOutline className={styles.svg} />
                   </div>
