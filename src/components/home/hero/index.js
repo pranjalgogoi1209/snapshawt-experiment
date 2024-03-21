@@ -5,6 +5,7 @@ import Image from "next/image";
 
 import { IoSearchOutline } from "react-icons/io5";
 import AiDriven from "./aidriven";
+import { TypeAnimation } from 'react-type-animation';
 
 import faceSwapImg01 from "./../../../../public/home/hero/faceSwapImg01.png";
 import faceSwapImg02 from "./../../../../public/home/hero/faceSwapImg02.png";
@@ -97,9 +98,8 @@ export default function Hero() {
                   <div className={styles.swapImg}>
                     {faceSwap?.map((item, index) => (
                       <div
-                        className={` ${
-                          faceSwapIndex === index ? styles.active : ""
-                        } ${styles.imgContainer}`}
+                        className={` ${faceSwapIndex === index ? styles.active : ""
+                          } ${styles.imgContainer}`}
                         key={index}
                       >
                         <Image
@@ -147,9 +147,8 @@ export default function Hero() {
                   <div className={styles.swapImg}>
                     {imageInhancer?.map((item, index) => (
                       <div
-                        className={` ${
-                          imgInhancerIndex === index ? styles.active : ""
-                        } ${styles.imgContainer}`}
+                        className={` ${imgInhancerIndex === index ? styles.active : ""
+                          } ${styles.imgContainer}`}
                         key={index}
                       >
                         <Image
@@ -174,6 +173,9 @@ export default function Hero() {
             {/* ai image generator */}
             <div className={styles.faceSwap}>
               <div className={styles.imgContainer}>
+                <div className={styles.maskLayer}>
+
+                </div>
                 <Image
                   src={imgGeneratorImg01}
                   alt="face-swap"
@@ -183,7 +185,7 @@ export default function Hero() {
               <div className={styles.faceSwapContent}>
                 <div className={styles.top}>
                   <div className={styles.titleContainer}>
-                    <p className={styles.title}>AI Image genrator</p>
+                    <p className={styles.title}>AI Image generator</p>
                     <div className={styles.free}>
                       {/* <Image src={free} alt="face-swap" /> */}
                     </div>
@@ -196,7 +198,20 @@ export default function Hero() {
                 <div className={styles.bottom}>
                   <div className={styles.search}>
                     <p className={styles.prompt}>
-                      A girl in train in Indian attire
+                      <TypeAnimation
+                        sequence={[
+                          'A girl in train in Indian Atire',
+                          5000,
+                          'every ceo is don in nature yess',
+                          5000,
+
+                        ]}
+                        wrapper="span"
+                        speed={10}
+                        omitDeletionAnimation="true"
+                        style={{ fontSize: '1em', display: 'inline-block' }}
+                        repeat={Infinity}
+                      />
                     </p>
                     <IoSearchOutline className={styles.svg} />
                   </div>
