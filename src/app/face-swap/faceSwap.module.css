@@ -1,6 +1,21 @@
 .FaceSwap {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin-top: 6.5vw;
+  padding: 3vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  background-image: url("./../../../public/faceSwap/bg.png");
+  background-position: center;
+  background-size: cover;
+  .mainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+  }
   .container1 {
     position: relative;
     width: 25vw;
@@ -38,6 +53,11 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      .title {
+        font-size: 1.5vw;
+        font-weight: 700;
+        color: #fff;
+      }
       .link {
         /* border: 1px solid #fff; */
         .btn {

@@ -18,8 +18,27 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 3vw;
-  .heading {
+  gap: 2vw;
+  .swapBtns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    .btn {
+      width: 26vw;
+      font-size: 1.5vw;
+      font-weight: 600;
+      cursor: pointer;
+      background-color: transparent;
+      padding: 1vw 2vw;
+      border-radius: 5vw;
+      color: var(--themeColor1);
+      border: 0.2vw solid #7a21bb;
+    }
+    .fillSwapBtn {
+      background: linear-gradient(to right, #ff93df, #7a21bb);
+      color: #fff;
+    }
   }
 
   .swapNowBtn {
@@ -29,7 +48,7 @@
   }
 
   .uploadContainer {
-    /* border: 1px solid red; */
+    border: 1px solid red;
     display: flex;
     gap: 5vw;
     .uploadTemplate,

@@ -3,7 +3,7 @@
 import React, { useState, useRef } from "react";
 import styles from "./groupAiFaceSwap.module.css";
 
-import Upload from "@/components/faceSwap/groupAiFaceSwap/upload/Upload";
+import Upload from "@/components/faceSwap/groupAiFaceSwap/upload";
 import Templates from "@/components/faceSwap/groupAiFaceSwap/templates";
 
 export default function GroupAiFaceSwap() {

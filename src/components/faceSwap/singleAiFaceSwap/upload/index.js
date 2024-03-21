@@ -160,6 +160,7 @@ export default function Upload({
 
   return (
     <div className={styles.Upload} ref={uploadContainerRef}>
+      <h1 className={`grd-txt`}> Face Swap</h1>
       <div className={styles.uploadContainer}>
         {/* upload template */}
         <div className={styles.uploadTemplate}>
