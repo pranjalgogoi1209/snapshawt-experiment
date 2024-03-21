@@ -47,3 +47,32 @@
     }
   }
 }
+
+
+@media screen and (max-width : 480px) {
+  .InstantFaceSwap{
+    flex-direction: column;
+    .rightContainer{
+      width: 100%;
+      .imgContainer01{
+        width: 40%;
+        left: 0;
+      }
+      .imgContainer02{
+        width: 40%;
+        left: 30%;
+      }
+      .imgContainer03{
+        width: 52%;
+        right: 0;
+      }
+    }
+    .leftContainer{
+      margin-bottom: 11rem;
+      width: 90%;
+      .title{
+        font-size: 2rem;
+      }
+    }
+  }
+}

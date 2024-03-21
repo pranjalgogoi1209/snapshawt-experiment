@@ -71,3 +71,41 @@
     }
   }
 }
+
+@media screen and (max-width : 480px) {
+  .Contact{
+    flex-direction: column;
+    .leftContainer{
+      width: 100%;
+      display: none;
+    }
+    .rightContainer{
+      width: 100%;
+      .title, .heading{
+        margin-left: 0;
+        width: 90%;
+        margin: auto;
+      }
+      .form{
+        width: 90%;
+        font-size: 1rem;
+        .input{
+          font-size: 1rem;
+          padding: .5rem 1rem;
+        }
+        .phoneEmail{
+          width: 100%;
+          flex-direction: column;
+        }
+        .textarea{
+          height: 15vh;
+          font-size: 1rem;
+          padding: .5rem 1rem;
+        }
+        .submit{
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}

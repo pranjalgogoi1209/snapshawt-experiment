@@ -92,3 +92,24 @@
     }
   }
 } */
+
+
+@media screen and (max-width : 480px) {
+  .footer{
+    flex-direction: column;
+    .leftFooter{
+      width: 100%;
+      .socialIcon{
+        width: 25px !important;
+        height: 25px !important;
+      }
+    }
+    .rightFooter{
+      flex-direction: column;
+      .rightFooterColumn{
+        width: 100%;
+        font-size: .8rem;
+      }
+    }
+  }
+}

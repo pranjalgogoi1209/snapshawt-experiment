@@ -1,3 +1,5 @@
+/** @format */
+
 .EnhanceImage {
   /* border: 1px solid black; */
   display: flex;
@@ -39,6 +41,28 @@
       position: absolute;
       top: 15%;
       right: -16%;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .EnhanceImage {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+    .rightContainer {
+      width: 95%;
+    }
+    .leftContainer {
+      width: 90%;
+      .btn{
+       font-size: 1.6rem;
+       padding: .6rem 1rem;
+       border-radius: 1.5rem;
+      }
+    }
+    .leftContainer h2 {
+      font-size: 2.4rem;
     }
   }
 }

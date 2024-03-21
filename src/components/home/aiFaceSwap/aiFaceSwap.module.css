@@ -1,3 +1,5 @@
+/** @format */
+
 .AiFaceSwap {
   width: 100vw;
   /* border: 1px solid black; */
@@ -47,7 +49,7 @@
         padding: 1vw;
         color: #7a21bb;
         font-weight: 700;
-        font-size: 1vw;
+        font-size: 1rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -106,5 +108,27 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .AiFaceSwap {
+    flex-direction: column;
+    padding-top: 5rem;
+    gap: 3rem;
+    align-items: center;
+    .leftContainer{
+      width: 100%;
+      margin-left: 0;
+      display: flex;
+      justify-content: center;
+      .mainContainer{
+        width: 80%;
+      }
+    }
+    .rightContainer{
+      width: 90%;
+      margin-right: 0;
+    }
   }
 }

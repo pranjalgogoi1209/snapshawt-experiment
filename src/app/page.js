@@ -12,7 +12,7 @@ export default function HomePage() {
   return (
     <div className={styles.HomePage}>
       {/* hero */}
-      <Hero />
+      {/* <Hero /> */}
 
       {/* ai-face-swap*/}
       <AiFaceSwap />
