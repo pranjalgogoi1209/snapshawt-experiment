@@ -1,25 +1,69 @@
 .SelectFaceSwap {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 2vw;
+  justify-content: flex-start;
+  gap: 1vw;
   .title {
     font-weight: 700;
     text-align: center;
     font-size: 2vw;
     line-height: 2.5vw;
   }
-  .selectFace {
+  .addFaceContainer {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    height: 18vw;
+    padding: 5vw;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: darkgray lightgray;
+  }
+  .container::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .container::-webkit-scrollbar-track {
+    background: lightgray;
+  }
+
+  .container::-webkit-scrollbar-thumb {
+    background-color: darkgray;
+    border-radius: 6px;
+  }
+  .addFace {
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
     .templateFace {
+      /* border: 1px solid black; */
+      width: 5vw;
+      display: flex;
+      place-items: center;
       border-radius: 50%;
+      background-color: #fff;
     }
-    .swapIcon {
-      border: 1px solid black;
+    .arrow {
+      /* border: 1px solid black; */
+      width: 5vw;
+      display: flex;
+      place-items: center;
     }
     .photoFace {
-      border: 1px solid black;
+      /* border: 1px solid black; */
+      width: 5vw;
+      display: flex;
+      place-items: center;
+      background-color: #fff;
+      border-radius: 50%;
+      cursor: pointer;
     }
   }
 }
