@@ -19,7 +19,7 @@
   .rightContainer {
     /* border: 1px solid black; */
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 2vw;
     .price,
@@ -44,6 +44,59 @@
       top: 7vw;
       left: 9.3%;
       z-index: 1002;
+    }
+    .mobileNavbar {
+      display: none;
+    }
+    .bar {
+      display: none;
+    }
+  }
+}
+
+@media all and (max-width: 480px) {
+  .Header {
+    /* border: 1px solid red; */
+    padding: 3vw 3vw;
+    height: 13vw;
+    .logoContainer {
+      width: 36vw;
+    }
+    .rightContainer {
+      gap: 4vw;
+      .price,
+      .credit {
+        font-size: 2.4vw;
+        border-radius: 1vw;
+        padding: 1.2vw 2vw;
+        width: 16vw;
+      }
+      .price {
+        padding: 1.5vw 2vw;
+      }
+      .desktopNavbar {
+        display: none;
+      }
+      .mobileNavbar {
+        display: flex;
+      }
+      .bar {
+        display: flex;
+        font-size: 5vw;
+        color: var(--themeColor1);
+      }
+      .profile {
+        position: fixed;
+        top: 7vw;
+        right: 1vw;
+        z-index: 1001;
+      }
+      .credits {
+        position: absolute;
+        top: 7vw;
+        left: 9.3%;
+        z-index: 1002;
+      }
     }
   }
 }

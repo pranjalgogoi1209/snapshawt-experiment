@@ -8,6 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  /* border: 1px solid black; */
 }
 .Upload {
   padding: 2vw;
@@ -48,7 +49,7 @@
   }
 
   .uploadContainer {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     gap: 5vw;
     .uploadTemplate,
@@ -86,7 +87,7 @@
 
         .uploadBtnContainer {
           border-radius: 1.5vw;
-          /* border: 10px solid black; */
+          /* border: 1px solid black; */
           background: linear-gradient(
             to top,
             rgba(122, 33, 187, 0.8),

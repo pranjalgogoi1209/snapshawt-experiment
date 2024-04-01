@@ -7,12 +7,23 @@ import profile from "@/../public/profile/profile.png";
 export default function DesktopNavbar({ setIsProfileOpen, isUserPresent }) {
   return (
     <nav className={styles.DesktopNavbar}>
-      <Link href={"/"} className={styles.navLink}>
-        Products
-      </Link>
-      <Link href={"/"} className={styles.navLink}>
+      <div className={`${styles.navLink} ${styles.products}`}>
+        <Link href={"/"} className={`${styles.navLink}`}>
+          <span className={styles.span}>Products</span>
+        </Link>
+        <ul className={styles.productsHoverContainer}>
+          <Link href={"/face-swap"}>
+            <li className={styles.list}>Face Swap</li>
+          </Link>
+          <li className={styles.list}>Ai Image Enhancer</li>
+          <li className={styles.list}>Ai Image Generator</li>
+        </ul>
+      </div>
+
+      <Link href={"/"} className={`${styles.navLink} ${styles.span}`}>
         Chat with Us
       </Link>
+
       {/* signin */}
       {!isUserPresent && (
         <Link

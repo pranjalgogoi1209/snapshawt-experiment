@@ -12,29 +12,17 @@
     line-height: 2.5vw;
   }
   .addFaceContainer {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 1vw;
     height: 18vw;
-    padding: 5vw;
+    padding: 1vw;
     overflow-y: scroll;
-    scrollbar-width: thin;
-    scrollbar-color: darkgray lightgray;
-  }
-  .container::-webkit-scrollbar {
-    width: 12px;
-  }
-
-  .container::-webkit-scrollbar-track {
-    background: lightgray;
-  }
-
-  .container::-webkit-scrollbar-thumb {
-    background-color: darkgray;
-    border-radius: 6px;
+    /*   scrollbar-width: thin;
+    scrollbar-color: darkgray lightgray; */
   }
   .addFace {
     /* border: 1px solid black; */
@@ -66,4 +54,18 @@
       cursor: pointer;
     }
   }
+}
+
+.addFaceContainer::-webkit-scrollbar {
+  width: 0.8vw;
+}
+
+.addFaceContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.addFaceContainer::-webkit-scrollbar-thumb {
+  /* background-color: var(--themeColor2); */
+  background: linear-gradient(to bottom, #ff93df, #7a21bb);
+  border-radius: 2vw;
 }

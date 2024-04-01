@@ -2,12 +2,16 @@
 import React, { useEffect, useState } from "react";
 import styles from "./header.module.css";
 import Image from "next/image";
+import Link from "next/link";
+
 import DesktopNavbar from "./desktopNavbar";
 import logoHeader from "@/../public/header/logoHeader.png";
-import Link from "next/link";
 import Profile from "../profile";
 import Credits from "../credits";
 import app from "../../firebase-config";
+import { FaBarsStaggered } from "react-icons/fa6";
+import MobileNavbar from "./mobileNavbar";
+
 import {
   onAuthStateChanged,
   getAuth,
@@ -21,8 +25,8 @@ export default function Header() {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isCreditsOpen, setIsCreditsOpen] = useState(false);
   const [user, setUser] = useState(null);
-
   const auth = getAuth();
+  const [isShowSidebar, setIsShowSidebar] = useState(false);
 
   useEffect(() => {
     auth.onAuthStateChanged(function (userr) {
@@ -67,17 +71,25 @@ export default function Header() {
         </div>
 
         {/* desktop navbar */}
-        <div className={styles.DesktopNavbar}>
+        <div className={styles.desktopNavbar}>
           <DesktopNavbar
             setIsProfileOpen={setIsProfileOpen}
             isUserPresent={user}
           />
         </div>
 
+        <FaBarsStaggered
+          className={styles.bar}
+          onClick={() => setIsShowSidebar(true)}
+        />
+
         {/* mobile navbar */}
-        {/* <div className={styles.DesktopNavbar}>
-          <DesktopNavbar setIsProfileOpen={setIsProfileOpen}/>
-        </div> */}
+        <div className={styles.mobileNavbar}>
+          <MobileNavbar
+            isShowSidebar={isShowSidebar}
+            setIsShowSidebar={setIsShowSidebar}
+          />
+        </div>
       </div>
     </header>
   );
